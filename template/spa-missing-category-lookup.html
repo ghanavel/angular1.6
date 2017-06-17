@@ -1,0 +1,140 @@
+<div>
+	<div class="jumbotron spa-header">
+		<h1>SPA Missing Category Lookup</h1>
+	</div>
+	<!-- <pre>
+		{{vm.result | json}}
+	</pre>
+	<pre>
+		{{vm.spaData}}
+	</pre> -->
+
+
+	<div ng-if="vm.userDetails.userType === 'MDW'" >
+	
+		<table class="table table-bordered table-striped main-table-header">
+	      <thead>
+	        <tr>
+	         
+	          <th>Missing category</th>
+	          <th>Data source</th>
+	          
+	        </tr>
+	      </thead>
+	      <tbody>
+	        
+	        
+	        <tr ng-repeat="spaItem in vm.spaData">
+	          <td>
+	          		one
+	          </td>
+	          <td>
+	          
+	          	two
+	          	
+	          </td>	          	
+	        </tr>
+	        
+	      </tbody>
+	    </table>
+	</div>
+
+
+	<div class="spa-second-table"> 
+		<div class="btn-container" ng-if="vm.userDetails.userType === 'MDW'" >
+			<button type="button" class="btn btn-primary">Completed List</button>
+			<button type="button" class="btn btn-primary">Reject List</button>		
+		</div>
+		<div class="table-responsive">
+		
+			<table class="table table-bordered table-striped main-table-header">
+		      <thead>
+		        <tr>
+		          <th>&nbsp;</th>
+		          <th>Mega BU</th>
+		          <th>Golden Sector Name</th>
+		          <th>Golden Sub Sector Name</th>
+		          <th>Golden Category Name</th>
+		          <th>Remarks</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        
+		        
+		        <tr ng-repeat="spaItem in vm.spaData">
+		          <td ng-class="{'error-class': !!vm.isSubmitted 
+		          				&& (!spaItem.goldenname
+		          				|| !spaItem.megabu
+		          				|| !spaItem.goldensubcategname
+		          				||!spaItem.goldencategname)}"><input type="checkbox" name="" ng-model="spaItem.checkResult" value="{{$index}}" ng-disabled="(!vm.isEditable)" ng-checked="!spaItem.megabu || (!!vm.isSelectAll)  || (!!vm.isSelectAll)"
+		          ng-click="vm.checkboxChange(spaItem.checkResult)">
+		          	<!-- {{spaItem.checkResult}} -->
+		          	<div  class="alert alert-danger" ng-if="">*	Oops</div>
+		          </td>
+		          <td ng-class="{'error-class': !!vm.isSubmitted 
+		          				&& (!spaItem.goldenname
+		          				|| !spaItem.megabu
+		          				|| !spaItem.goldensubcategname
+		          				||!spaItem.goldencategname)}">
+		          	
+		          	<input type="text" name="" ng-disabled="!spaItem.checkResult" ng-model="spaItem.megabu" /> 
+		          	
+		          </td>	          
+		          <td ng-class="{'error-class': !!vm.isSubmitted 
+		          				&& (!spaItem.goldenname
+		          				|| !spaItem.megabu
+		          				|| !spaItem.goldensubcategname
+		          				||!spaItem.goldencategname)}">
+		          	<input type="text" name="" ng-disabled="!spaItem.checkResult" ng-model="spaItem.goldenname" /></td>
+		          <td ng-class="{'error-class': !!vm.isSubmitted 
+		          				&& (!spaItem.goldenname
+		          				|| !spaItem.megabu
+		          				|| !spaItem.goldensubcategname
+		          				||!spaItem.goldencategname)}">
+		           <input type="text" name="" ng-disabled="!spaItem.checkResult" ng-model="spaItem.goldensubcategname" />
+		           </td>
+		          <td ng-class="{'error-class': !!vm.isSubmitted 
+		          				&& (!spaItem.goldenname
+		          				|| !spaItem.megabu
+		          				|| !spaItem.goldensubcategname
+		          				||!spaItem.goldencategname)}">
+		          <input type="text" name="" ng-disabled="!spaItem.checkResult" ng-model="spaItem.goldencategname" />
+		          	</td>	          
+		          <td ng-class="{'error-class': !!vm.isSubmitted 
+		          				&& (!spaItem.goldenname
+		          				|| !spaItem.megabu
+		          				|| !spaItem.goldensubcategname
+		          				||!spaItem.goldencategname)}"><input type="text" name="" ng-model="spaItem.remarks" ng-disabled="!spaItem.checkResult"></td>	
+		        </tr>
+		        
+		      </tbody>
+		    </table>
+		</div>
+		
+	</div>
+	<div style="margin-top: 20px;margin-bottom: 20px;">
+			<!-- <pre>
+				checkResult: {{checkResult}}
+			</pre>
+			<pre>
+				isSelectAll :{{vm.isSelectAll}}
+			</pre>
+			<pre>
+				isEditable :{{vm.isEditable}}
+			</pre> -->
+			<!-- <pre>
+				selectedData : {{vm.selectedData | json}}
+			</pre> -->
+			<button type="button" class="btn btn-primary" ng-disabled="!vm.isEditable" ng-click="vm.doSelectAll()" >Select All/Deselect All</button>
+			<button type="button" class="btn btn-primary" ng-click="vm.insert()">Insert</button>
+			<button type="button" class="btn btn-primary" ng-click="vm.edit()" ng-disabled = "vm.isEditable">Edit</button>
+
+			<button type="button" class="btn btn-primary" ng-click="vm.reset()" ng-disabled = "!vm.isEditable">Reset</button>
+
+			<button type="button" class="btn btn-primary" ng-if="vm.userDetails.userType === 'MDW'"  ng-click="vm.submit(vm.spaData)"  >Submit</button>
+
+			<button type="button" class="btn btn-primary" ng-if="vm.userDetails.userType === 'ADM'"    >Approve</button>
+			<button type="button" class="btn btn-primary" ng-if="vm.userDetails.userType === 'ADM'"   >Reject</button>
+		</div>
+</div>
+

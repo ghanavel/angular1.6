@@ -1,0 +1,68 @@
+﻿a {
+    cursor: pointer;
+}
+
+.jumbotron.spa-header{
+	background-color: #2d6594;
+	padding: 20px;
+	text-align:center;
+	color: #fff;
+}
+
+.navbar.spa-main-menu{
+	background-color: #2d6594;
+
+}
+
+.navbar.spa-main-menu a{
+	color:#000;
+}
+
+.spa-main-menu li a{
+	color:#000 !important;
+}
+
+.error-class{
+	background-color: red;
+}
+
+.spa-second-table{
+	
+	border:  1px solid #2d6594;
+	padding: 5px;
+	overflow-x: scroll;
+}
+
+.jumbotron.spa-header h1{
+	font-size: 16px;
+}
+
+.btn-container{
+	padding: 20px;
+}
+
+table.main-table-header{
+	color:#000;
+	
+}
+
+.table.main-table-header>thead>tr>th{
+	background-color: #356d9c;
+}
+
+.main-table-header>thead>tr>th, 
+.main-table-header>tbody>tr>th, 
+.main-table-header>tfoot>tr>th, 
+.main-table-header>thead>tr>td, 
+.main-table-header>tbody>tr>td, 
+.table-bordered>tfoot>tr>td{
+	border: 1px solid #e5e5e5;
+}
+
+/* Menu Css Begin*/
+.user-link{
+	cursor: default;
+}
+
+
+/* Menu Css End*/ 

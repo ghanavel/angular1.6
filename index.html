@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>My app</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="css/app.css" rel="stylesheet" />
+</head>
+<body>
+
+   <div>
+       
+   
+        <div ng-include="'template/menu.html'"></div>
+        <div class="container">
+            <div class="col-md-12">            
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+       
+
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/spa.controller.js"></script>
+    <script src="js/ga.controller.js"></script>
+    <script src="js/copy-length.controller.js"></script>
+    <script src="js/controler/menu.controller.js"></script>
+    <script src="js/services/user-services.js"></script>
+    <script src="js/services/common-services.js"></script>
+    <script src="js/services/enviroment-service.js"></script>
+    
+
+   
+</body>
+</html>
