@@ -23,7 +23,7 @@
 }
 
 .error-class{
-	background-color: red;
+	background-color: red !important;
 }
 
 .spa-second-table{
